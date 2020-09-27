@@ -1,0 +1,1 @@
+Migrated to [cstrike](https://github.com/MartinSamanArata2018/cstrike/tree/master/terraform)
