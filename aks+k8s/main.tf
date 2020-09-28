@@ -1,3 +1,14 @@
+terraform {
+  required_providers {
+    azurerm = {
+      version = "~> 2.29.0"
+    }
+    kubernetes = {
+      version = "~> 1.13.2"
+    }
+  }
+}
+
 provider "azurerm" {
   features {}
 }
