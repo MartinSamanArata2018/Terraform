@@ -1,6 +1,5 @@
 # Cluster GKE
 resource "google_container_cluster" "gke_cluster" {
-  #name     = "${var.project_id}-gke"
   name     = "${var.prefix}-gke"
   location = var.location_gke
 
@@ -8,11 +7,11 @@ resource "google_container_cluster" "gke_cluster" {
   initial_node_count       = 1
 
   master_auth {
-    username = ""
-    password = ""
+    username = "admin"
+    password = "admin"
 
     client_certificate_config {
-      issue_client_certificate = false
+      issue_client_certificate = true
     }
   }
 }
@@ -30,13 +29,8 @@ resource "google_container_node_pool" "primary_nodes" {
       "https://www.googleapis.com/auth/monitoring",
     ]
 
-    #labels = {
-    #  env = var.project_id
-    #}
-
-    # preemptible  = true
+    preemptible  = true
     machine_type = var.machine_type_gke
-    #tags         = ["gke-node", "${var.project_id}-gke"]
     metadata = {
       disable-legacy-endpoints = "true"
     }

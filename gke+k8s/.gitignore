@@ -4,3 +4,4 @@
 /.terraform.tfstate.lock.info
 /k2tf.exe
 /.terraform/plugins
+credentials.json

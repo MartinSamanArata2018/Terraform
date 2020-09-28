@@ -3,9 +3,18 @@ variable "prefix" {
   default     = "ms"
 }
 
+variable "project" {
+  description = "Project id"
+  default     = "ci-cd-demo-275102"
+}
+
+variable "credentials" {
+  default = "credentials.json"
+}
+
 variable "location_gke" {
   description = "Region para aprovisionar los recursos en GKE"
-  default     = "Brazil South"
+  default     = "us-east1"
 }
 
 variable "numero_nodos" {
@@ -15,5 +24,5 @@ variable "numero_nodos" {
 
 variable "machine_type_gke" {
   description = "Tipo de vm para los nodos en GKE"
-  default     = "n1-standard-1"
+  default     = "g1-small"
 }

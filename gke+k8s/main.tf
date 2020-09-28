@@ -10,6 +10,9 @@ terraform {
 }
 
 provider "google" {
+  project = var.project
+  region  = var.location_gke
+  credentials = file(var.credentials)
 }
 
 provider "kubernetes" {
