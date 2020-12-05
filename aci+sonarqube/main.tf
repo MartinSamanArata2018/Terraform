@@ -26,7 +26,7 @@ resource "azurerm_container_group" "sonarqube" {
 
   container {
     name   = "sonarqube"
-    image  = "sonarqube:8.2-community"
+    image  = "sonarqube:8.5.1-community"
     cpu    = var.cpu
     memory = var.ram
 
@@ -39,5 +39,11 @@ resource "azurerm_container_group" "sonarqube" {
       port     = 9092
       protocol = "TCP"
     }
+
+    #environment_variables = {
+    #  "SONAR_JDBC_URL" = "value"
+    #  "SONAR_JDBC_USERNAME" = "value"
+    #  "SONAR_JDBC_PASSWORD" = "value"
+    #}
   }
 }
